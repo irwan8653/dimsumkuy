@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIMSUM KUYY</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: url("images/8.-Nikmati-Sensasi-Pedas-dan-Lezat-dengan-Dimsum-Mentai-Bolekaka-2.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        font-family: sans-serif;
+      }
+
+      .review-section {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 500px;
+        margin: 40px auto;
+      }
+
+      #review-form input,
+      #review-form textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      #review-form button {
+        padding: 10px;
+        background: #ff5722;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      .review {
+        background: #fefefe;
+        padding: 10px;
+        margin-top: 15px;
+        border-left: 4px solid #ff5722;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="container">
+        <div class="header">
+          <h1>Dimsum Kuyy</h1>
+          <img
+            src="images/20250420_063622.png"
+            alt="Logo Dimsum"
+            class="logo-kanan"
+          />
+        </div>
+
+        <header class="hero">
+          <h2 class="headline animate-fadein">
+            Tenggelam dalam Lelehan Mentai
+          </h2>
+          <p class="subheadline">
+            Dimsum kekinian dengan saus meleleh, topping melimpah, dan cita rasa
+            viral!
+          </p>
+          <a href="#order" class="cta animate-bounce">🍱 Pesan Sekarang</a>
+        </header>
+
+        <section class="features">
+          <h3>Varian Favorit</h3>
+          <div class="cards">
+            <div class="card animate-slide">
+              <h4>🔥 Spicy Mentai Blast</h4>
+              <div class="gallery-grid">
+                <img
+                  src="images/WhatsApp Image 2025-04-18 at 20.28.07_52dbf1e9.jpg"
+                  alt="Dimsum Mentai"
+                />
+              </div>
+              <div class="price-tag">Rp 15.000</div>
+              <p>Saus mentai pedas dengan cabai kering.</p>
+            </div>
+
+            <div class="card animate-slide">
+              <h4>🧀 Cheesy Lava</h4>
+              <div class="gallery-grid">
+                <img
+                  src="images/WhatsApp Image 2025-04-18 at 20.28.05_8581453b.jpg"
+                  alt="Dimsum keju"
+                />
+              </div>
+              <div class="price-tag">Rp 17.000</div>
+              <p>Lelehan keju mozzarella di atas dimsum.</p>
+            </div>
+
+            <div class="card animate-slide">
+              <h4>🌶️ Chili Oil</h4>
+              <div class="gallery-grid">
+                <img
+                  src="images/WhatsApp Image 2025-04-18 at 20.28.06_1e3be7ba.jpg"
+                  alt="Dimsum chili oil"
+                />
+              </div>
+              <div class="price-tag">Rp 14.000</div>
+              <p>Dimsum gurih dengan siraman minyak cabai.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION Ulasan -->
+        <section class="review-section">
+          <h3>Apa Kata Mereka?</h3>
+          <form id="review-form">
+            <input type="text" id="name" placeholder="Nama kamu" required />
+            <textarea
+              id="message"
+              placeholder="Tulis ulasan kamu..."
+              required
+            ></textarea>
+            <button type="submit">Kirim Ulasan</button>
+          </form>
+          <div id="reviews-container"></div>
+        </section>
+
+        <!-- SECTION Order -->
+        <section id="order" class="order-section">
+          <h3>Siap Order?</h3>
+          <p>
+            Langsung klik tombol di bawah dan nikmati Dimsum Kuyy hari ini juga!
+          </p>
+          <a href="https://wa.me/6283166480413" target="_blank" class="cta"
+            >📲 Order via WhatsApp</a
+          >
+        </section>
+
+        <footer>
+          <p>&copy; 2025 Dimsum Kuyy • Instagram | TikTok</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Script AOS & Ulasan -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      const form = document.getElementById("review-form");
+      const container = document.getElementById("reviews-container");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name && message) {
+          const review = document.createElement("div");
+          review.classList.add("review");
+          review.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+          container.prepend(review);
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
